@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Verification</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <!--<script src="script.js"></script>-->
+</head>
+<body>
+    <div class="align-order">
+    <h1>USER VERIFICATION</h1>
+    <input type="number" id="int" placeholder="PHONE NUMBER">
+    <button id="hi" onclick="uverify()">SENT OTP</button><br><br>
+    <button id="hi" onclick="cancel()">CANCEL</button>
+    </div>
+    <script>
+
+        function generateOTP(length = 6) {
+      let otp = "";
+      for (let i = 0; i < length; i++) {
+        otp += Math.floor(Math.random() * 10);
+      }
+      return otp;
+    }
+
+    function uverify() {
+      let phone = document.getElementById("int").value;
+      if((phone>=6000000000)&&(phone<=9999999999))
+      {
+        // window.location.href = "otp_verify_2.html";
+        if (phone === "") {
+        alert("Please enter phone number");
+        return;
+      }
+        let otp = generateOTP(6);
+        localStorage.setItem("otp", otp);
+        alert("Your OTP is: " + otp);
+        window.location.href = "otp_verify_2.html";
+      }
+      else{
+          alert("Invalid Phone Number");
+      }
+
+       }
+
+    function cancel() {
+         window.location.href="index.html";
+    }
+    </script>
+</body>
+</html>

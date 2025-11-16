@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="script.js"></script>
+    <!--<script src="script.js"></script>-->
+</head>
+<body>
+    <div class="align-order">
+    <h1>OTP VERIFICATION</h1>
+    <input type="number" id="int" placeholder="Enter OTP">
+    <button id="hi" onclick="otp()">VERIFY</button>
+    <p>Resent OTP?</p>
+    <button id="hi" onclick="resendOTP()">CLICK HERE</button>
+</div>
+<script>
+    // function otp(){
+    //         window.location.href="updatepass.html";
+    //     }
+
+        function otp() {
+      let enteredOTP = document.getElementById("int").value;
+      let savedOTP = localStorage.getItem("otp");
+
+      if (enteredOTP === savedOTP) {
+        alert("✅ OTP Verified Successfully!");
+        window.location.href="updatepass.html";
+      } else {
+        alert("❌ Invalid OTP!");
+      }
+    }
+
+    function generateOTP(length = 6) {
+      let otp = "";
+      for (let i = 0; i < length; i++) {
+        otp += Math.floor(Math.random() * 10);
+      }
+      return otp;
+    }
+
+    function resendOTP() {
+      let newOTP = generateOTP(6);
+      localStorage.setItem("otp", newOTP);
+      alert("🔄 New OTP Sent: " + newOTP);
+    }
+</script>
+</body>
+</html>

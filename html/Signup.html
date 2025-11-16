@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="./javascript/script.js"></script>
+</head>
+<body>
+    <div class="login-container">
+    <h1>SPOTSTAR - SIGNUP</h1>
+    
+        <input type="text" id="fname" placeholder="First Name">
+        <input type="text" id="lname" placeholder="Last Name">
+        <input type="number" id="phone" placeholder="Phone Number">
+        <input type="email" id="mail" placeholder="Email Id">
+        <input type="password" id="create" placeholder="create Password">
+        <input type="password" id="Confirm" placeholder="Confirm password"><br>
+        <button onclick="back()" id="hi">CANCEL</button>
+        <button onclick="signup()" id="hey">NEXT</button>
+    
+</div>
+<script>
+
+
+    function signup() {
+        let fname = document.getElementById("fname").value;
+      let lname = document.getElementById("lname").value;
+      let phoneno = document.getElementById("phone").value;
+      // let email = document.getElementById("mail").value;
+    //   let createpass = document.getElementById("create").value;
+      let confirmPass = document.getElementById("Confirm").value;
+
+      if (fname === "" || lname === "" || phoneno === "" ||  email === ""  || createpass === "" || 
+      confirmPass === "") {
+        alert("⚠️ Please fill all fields!");
+        return;
+      }
+
+      // phone number
+      if(phoneno.length!==10 || isNaN(phoneno)){
+          alert("Invalid PhoneNumber");
+          return;
+      }
+
+      // email
+      var email = document.getElementById("mail").value;
+      var flag1=true
+      var flag2=false
+      for(var i=0;i<email.length;i++)
+      {
+        if((email[i]>='A')&&(email[i]<='Z')){
+          flag1=false
+        }
+        if(email[i]=='@'){
+          flag2=true
+        }
+      }
+      if((flag1==true)&&(flag2==true)){
+      }
+      else{
+        alert("Invalid Email Id");
+        return;
+      }
+
+      // password
+
+      var createpass = document.getElementById("create").value;      
+      var Upper=0
+      var Lower=0
+      var Num=0
+      var Special=0
+      for(var i=0;i<createpass.length;i++)
+      {
+          var char=createpass[i]
+          if((char>='A')&&(char<='Z')){
+              Upper++
+          }
+          else if((char>='a')&&(char<='z')){
+              Lower++
+          }
+          else if((char>='0')&&(char<='9')){
+              Num++
+          }
+          else{
+              Special++
+          }
+      }
+      if((createpass.length>=8)&&(createpass.length<=16)&&(Upper>=1)&&(Lower>=1)&&(Num>=1)&&(Special>=1)){
+      }
+      else{
+          alert("Suggest Strong Password")
+          return;
+      }
+
+      if (createpass !== confirmPass) {
+        alert("⚠️Password do not match!");
+        return;
+      }
+
+      // localStorage.setItem("username",email)
+      // localStorage.setItem("password",createpass)
+
+      let otp =generateOTP(6);
+      localStorage.setItem("otp", otp);
+      window.location.href="otpverify.html"; 
+      alert("Your OTP is: " + otp);
+    }
+
+    function generateOTP(length = 6) {
+      let otp = "";
+      for (let i = 0; i < length; i++) {
+        otp += Math.floor(Math.random() * 10);
+      }
+      return otp;
+    }
+    function back(){
+            window.location.href="../index.html";
+        }
+
+</script>
+</body>
+</html>

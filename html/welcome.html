@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="align-order">
+    <h1>SPOTSTAR</h1>
+    <h2>WELCOME</h2>
+    <p class="welcome">
+        <strong>Welcome to Spotstar!</strong> Your one-stop platform to discover and enjoy your favorite music and movies. 
+        Explore trending tracks and hidden cinematic gems tailored just for you — all in one place.
+      </p>
+      <center>
+      <div class="image-button">
+          <img src="../images/welcome_page/music.jpg" alt="Music" class="image-button" onclick="music()">
+          <div class="image-text">Music</div>
+          </div>
+          <div class="image-button">
+          <img src="../images/welcome_page/movies.jpg" alt="movie" class="image-button" onclick="movie()">
+          <div class="image-text">Movies</div>
+        </div>
+        <div>
+            <button class="click-back" onclick="welcome_back()">BACK</button>
+        </div>
+    </center>
+    </div>
+    
+    <script>
+        function music(){
+                window.location.href="music_page.html";
+            }
+        function movie(){
+                window.location.href="movies_choice.html";
+            }
+        function welcome_back(){
+                window.location.href="../index.html";
+            }
+    </script>
+    </body>
+</html>

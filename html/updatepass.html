@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Update Password</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="align-order">
+    <h1>UPDATE PASSWORD</h1>
+    <input type="password" id="create" placeholder="New Password">
+    <input type="password" id="Confirm" placeholder="Confirm Password">
+    <button id="hi" onclick="updatepass()">Update</button>
+    </div>
+    <script>
+
+        function updatepass() {
+      let confirmPass = document.getElementById("Confirm").value;
+
+      var createpass = document.getElementById("create").value;      
+      var Upper=0
+      var Lower=0
+      var Num=0
+      var Special=0
+      for(var i=0;i<createpass.length;i++)
+      {
+          var char=createpass[i]
+          if((char>='A')&&(char<='Z')){
+              Upper++
+          }
+          else if((char>='a')&&(char<='z')){
+              Lower++
+          }
+          else if((char>='0')&&(char<='9')){
+              Num++
+          }
+          else{
+              Special++
+          }
+      }
+      if((createpass.length>=8)&&(createpass.length<=16)&&(Upper>=1)&&(Lower>=1)&&(Num>=1)&&(Special>=1)){
+      }
+      else{
+          alert("Suggest Strong Password")
+          return;
+      }
+
+      if (createpass === "" || confirmPass === "") {
+        alert("⚠️ Please fill both fields!");
+        return;
+      }
+
+      if (createpass !== confirmPass) {
+        alert("❌ Passwords do not match!");
+        return;
+      }
+
+      localStorage.setItem("password",createpass);
+      alert("✅ Password updated successfully!");
+      window.location.href="../index.html";
+    }
+    </script>
+</body>
+</html>

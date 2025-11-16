@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Spotstar</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <!--<script src="./javascript/script.js"></script>-->
+</head>
+<body>
+    <div class="container">
+    <h1>SPOTSTAR</h1>
+    <p class="description">Spotstar is a smart platform that helps users discover trending songs and movies tailored to their tastes.
+        It curates personalized recommendations and hidden gems from global entertainment industries.
+        With Spotstar, finding your next favorite song or movie is just a click away.</p>
+        <h2>LOGIN</h2>
+        
+            <input type="text" placeholder="Username 'pro@123'" id="txt">
+            <input type="password" placeholder="Password 'Spot@123'" id="pss"><br>
+            <button type="Submit" class="login-button" id="log" onclick="welcome()">Login</button>
+        
+        <div class="link">
+        <p><a href="./html/userverify.html">Forgot Password?</a></p>
+        <p>ARE YOU NEW USER?<a href="./html/Signup.html">Sign Up</a></p>
+        </div>
+    </div>
+    <script>
+        // function welcome(){
+        //         window.location.href="welcome.html";
+        //     }
+    function welcome(){
+        var user=document.getElementById("txt").value;
+        var password=document.getElementById("pss").value;
+        // var storeuser=localStorage.getItem("username");
+        // var storepass=localStorage.getItem("password");
+        if (user === "" || password === "") {
+        alert("⚠️ Please fill all fields!");
+        return;
+      }
+        
+        if((user==="pro@123")&&(password==="Spot@123")){
+            window.location.href="./html/welcome.html";
+        }
+        else{
+            alert("Invalid Username or Password");
+        }
+    }
+    </script>
+    </body>
+</html>

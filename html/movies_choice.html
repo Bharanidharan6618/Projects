@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Choose Language</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="login-container">
+    <div class="top-center">
+    <label for="language">Language Choice</label>
+    <select id="language" onchange="goToPage(this.value)">
+        <option value=""disabled selected hidden>Select Language</option>
+        <option value="tamil_movies.html" onclick="tamil()">Tamil</option>
+        <option value="malayalam_movies.html" onclick="malayalam()">Malayalam</option>
+        <option value="english_movies.html" onclick="english()">English</option>
+    </select>
+</div><br>
+<h2>POPULAR FILMS</h2>
+    <div class="movie-button">
+        <img src="../images/movie_choice/dragon.jpg" alt="Dragon" class="movie-image" onclick="dragon()">
+        <img src="../images/movie_choice/charlie.jpg" alt="Charlie" class="movie-image" onclick="charlie()">
+        <img src="../images/movie_choice/vikram.jpg" alt="Vikram" class="movie-image" onclick="vikram()">
+        <img src="../images/movie_choice/96.jpg" alt="96" class="movie-image" onclick="movie_96()">
+        <img src="../images/movie_choice/master.jpg" alt="Master" class="movie-image" onclick="master()">
+        <img src="../images/movie_choice/meiyazhagan.jpg" alt="Meiyazhagan" class="movie-image" onclick="meiyazhagan()">
+        <img src="../images/movie_choice/kantara.jpg" alt="Kantara" class="movie-image" onclick="kantara()">
+        <img src="../images/movie_choice/bahubali.jpg" alt="Bahubali" class="movie-image" onclick="bahubali()">
+        <img src="../images/movie_choice/kgf.jpg" alt="KGF" class="movie-image" onclick="kgf()">
+        <img src="../images/movie_choice/leo.jpg" alt="Leo" class="movie-image" onclick="leo()">
+        <img src="../images/movie_choice/taare zameen par.jpg" alt="Taare zameen par" class="movie-image" onclick="taare()">
+        <img src="../images/movie_choice/stree.jpg" alt="Stree" class="movie-image" onclick="stree()">
+    </div>
+    <center><button class="click-back" onclick="movies_back()">BACK</button></center>
+    </div>
+
+    <script>
+        function goToPage(page){
+            if(page){
+                window.location.href=page;
+            }
+        }
+        
+        function dragon(){
+            window.location.href="Dragan_movie.html";
+        }
+        function charlie(){
+            window.location.href="Charlie_movie.html";
+        }
+        function vikram(){
+            window.location.href="vikram_movie.html";
+        }
+        function movie_96(){
+            window.location.href="96_movie.html";
+        }
+        function master(){
+            window.location.href="master_movie.html";
+        }
+        function meiyazhagan(){
+            window.location.href="meiyazhagan_movie.html";
+        }
+        function kantara(){
+            window.location.href="kantara_movie.html";
+        }
+        function bahubali(){
+            window.location.href="bahubali_movie.html";
+        }
+        function kgf(){
+            window.location.href="k.g.f_movie.html";
+        }
+        function leo(){
+            window.location.href="leo_movie.html";
+        }
+        function taare(){
+            window.location.href="Taarre_zameen_par_movie.html";
+        }
+        function stree(){
+            window.location.href="Stree_movie.html";
+        }
+    
+        function movies_back(){
+            window.location.href="welcome.html";
+        }
+    </script>
+
+</body>
+</html>
